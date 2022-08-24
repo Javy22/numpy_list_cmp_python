@@ -29,6 +29,7 @@ IMPORTANTE: Resolver con compresion de listas, pero si resulta muy complejo
 es preferible que arranque utilizando los métodos tradicionales
 de bucle/condicionales y luego intentarlo con comprension de listas
 '''
+import PySimpleGUI as sg
 
 if __name__ == '__main__':
     print('Comenzamos a ponernos serios!')
@@ -44,5 +45,20 @@ if __name__ == '__main__':
 
     # Se espera obtener:
     # ['Tamara', 'Juan', 'Alberto'......]
+    
+    nombres_filtrados = [x for x in nombres if x[0] in padron ]
+    print(nombres_filtrados)
+    
+    sg.theme('DarkPurple')
+    layout = [[sg.Text('Padrón con las letras de la lista')],
+    [sg.InputText(nombres_filtrados)],
+    [sg.OK(), sg.Cancel ()]]
+
+    window = sg.Window ('Ejercicio profundización N° 2', layout)
+    while True:
+     event, values = window.read()
+     if event in (sg.WIN_CLOSED, 'Cancel') :
+        break
+     window.close()
 
     print("terminamos")

@@ -27,10 +27,29 @@ que ya dispongamos de Python. El objetivo es:
         la suma y los números recoletados
     b) Si el número es mayor a 21 se debe informar al usuario que perdio
 '''
-
+import random
+import PySimpleGUI as sg
 if __name__ == '__main__':
     print('Comenzamos a divertirnos!')
     # A partir de aquí escriba el código que resuelve el enunciado
     # Leer el enunciado con atención y consultar cualquier duda
+    
+    numeros_aleatorios = [random.randint(1, 10) for x in range(3)]
+    if sum(numeros_aleatorios) <= 21 :
+        print(numeros_aleatorios)
+    else:
+        print("You Lost!!!")
+
+    sg.theme('DarkPurple')
+    layout = [[sg.Text('Listas y sus metodos')],
+    [sg.InputText(numeros_aleatorios)],
+    [sg.OK(), sg.Cancel ()]]
+
+    window = sg.Window ('Profundización N° 1', layout)
+    while True:
+     event, values = window.read()
+     if event in (sg.WIN_CLOSED, 'Cancel') :
+        break
+     window.close()
 
     print("terminamos")

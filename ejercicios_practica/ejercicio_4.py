@@ -25,10 +25,15 @@ if __name__ == '__main__':
     # TIP: Recomendamos ver el método "isdigit" de strings
     # para aplicar en este caso.
     list_numeros_str = ['5', '2', '3', '', '7', 'NaN']
-
+    conversion_lista = [int(x) if x.isdigit()== True else 0 for x in list_numeros_str]
+    print(conversion_lista)  
 
     # ¿Ya terminaron el ejercicio? ¿Por qué no prueban
     # hacer negativo alguno de los números de la lista?
     # ¿Qué sucede con isdigit? Sorprendente no?
 
     print("terminamos")
+
+    list_numeros_str = ['5', '-2', '3', '', '7', 'NaN']
+    conversion_lista_negativo = [int(x) if x.isdigit()== True else 0 for x in list_numeros_str]
+    print("Lista con un negativo :", conversion_lista_negativo)  

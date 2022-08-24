@@ -20,6 +20,9 @@ if __name__ == '__main__':
 
     # len_string = lambda......
 
+    len_string = lambda x : len(x)
+    print("Tamaño de String :", len_string("Programación Python"))
+    
     # 2)
     # Lista de string
     palabras = ['Inove', 'casa', 'programacion']
@@ -35,5 +38,7 @@ if __name__ == '__main__':
     # directamente la lambda.
 
     # palabras_len = list(map....)
-
+    palabras_len = list(map(lambda x: len(x), palabras))
+    print("Tamaño de cada palabra en la lista ", palabras_len)
+     
     print("terminamos")
